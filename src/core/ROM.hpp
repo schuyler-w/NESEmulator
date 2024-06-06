@@ -30,9 +30,9 @@ class ROM {
 public:
     std::vector<u8> getChrData() { return chrData; };
     std::vector<u8> getPrgCode() { return prgCode; };
-    void open(std::string);
+    void open(const std::string&);
     void printHeader();
-    int getMirroring();
+    int getMirroring() const;
     Mapper *getMapper();
 private:
     ROMHeader header;
