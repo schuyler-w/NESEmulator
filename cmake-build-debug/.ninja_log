@@ -1,0 +1,11 @@
+# ninja log v5
+3	57	1717644832692004540	build.ninja	fd62f704d90d149
+4	43	1717643825066792104	CMakeFiles/NEmu.dir/src/core/RAM.cpp.o	87123e9f23b54fb2
+577	618	1717643825642042975	NEmu	ebeedbcd651106e7
+0	225	1717641901746116045	CMakeFiles/NEmu.dir/src/core/Joystick.cpp.o	91ec891643b7043c
+3	326	1717643825349271737	CMakeFiles/NEmu.dir/src/core/Mapper/Mapper.cpp.o	a40b690b188ff097
+4	463	1717643825485293585	CMakeFiles/NEmu.dir/src/core/ROM.cpp.o	629ec19537531f48
+3	377	1717643825399950515	CMakeFiles/NEmu.dir/src/core/PPU.cpp.o	476432c330e4ea8d
+3	328	1717643825351183600	CMakeFiles/NEmu.dir/src/core/Mapper/NROM.cpp.o	824d2ba359c6637c
+2	528	1717643825549977320	CMakeFiles/NEmu.dir/src/Desktop/main.cpp.o	89bd31bab4cb75c8
+3	577	1717643825599250857	CMakeFiles/NEmu.dir/src/core/CPU.cpp.o	885c8a628b2ed5e9

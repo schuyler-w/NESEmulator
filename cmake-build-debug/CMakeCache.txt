@@ -219,6 +219,9 @@ NEmu_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 NEmu_SOURCE_DIR:STATIC=/Users/schuyler/Documents/Projects/NEmu
 
+//The directory containing a CMake configuration file for SDL2.
+SDL2_DIR:PATH=/opt/homebrew/lib/cmake/SDL2
+
 
 ########################
 # INTERNAL cache entries

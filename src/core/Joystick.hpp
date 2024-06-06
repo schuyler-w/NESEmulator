@@ -18,8 +18,8 @@ class Joystick : BusInterface {
     bool strobe;
 
 public:
-    u8 read(u16 address);
-    void write(u16 address, u8 data);
+    u8 read(u16 address) override;
+    void write(u16 address, u8 data) override;
 
     void setButtonPressed(SDL_Keycode, bool);
 };

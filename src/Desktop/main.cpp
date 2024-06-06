@@ -5,16 +5,13 @@
 #include <map>
 
 #include "../core/CPU.hpp"
-#include "../core/Mapper/Mapper.hpp"
-#include "../core/PPU.hpp"
 #include "../core/ROM.hpp"
-#include "../core/Joystick.hpp"
 
 int main(int argc, char **argv) {
 
-    std::string romPath = "";
+    std::string romPath;
     std::string COMMAND_LINE_ERROR_MESSAGE = "Use -insert <path/to/rom> to start playing.";
-    bool fullscreen = false;
+
 
     if (argc < 2) {
         std::cout << COMMAND_LINE_ERROR_MESSAGE << std::endl;
@@ -26,7 +23,7 @@ int main(int argc, char **argv) {
     if (option == "-insert") {
         romPath = argv[2];
     } else {
-        std::cout << "Unkown option '" << option << "'. " << COMMAND_LINE_ERROR_MESSAGE << std::endl;
+        std::cout << "Unknown option '" << option << "'. " << COMMAND_LINE_ERROR_MESSAGE << std::endl;
         return 1;
     }
 
@@ -38,7 +35,7 @@ int main(int argc, char **argv) {
 
     for (int i = 0; i < SDL_NumJoysticks(); i++) {
         if (SDL_IsGameController(i)) {
-            con = SDL_GameControllerOpen(i);
+            SDL_GameControllerOpen(i);
             std::cout << "Controller detected.";
             break;
         }
@@ -54,7 +51,7 @@ int main(int argc, char **argv) {
     map.insert(std::pair<int, int>(SDL_CONTROLLER_BUTTON_DPAD_RIGHT, SDLK_RIGHT));
 
     SDL_Window *window;
-    std::string window_title = "MedNES";
+    std::string window_title = "NES-Emulator";
     bool headlessMode = false;
 
     window = SDL_CreateWindow(
@@ -66,13 +63,9 @@ int main(int argc, char **argv) {
             SDL_WINDOW_SHOWN          // flags - see below
     );
 
-    if (window == NULL) {
+    if (window == nullptr) {
         printf("Could not create window: %s\n", SDL_GetError());
         return 1;
-    }
-
-    if (fullscreen) {
-        SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN);
     }
 
     bool is_running = true;
@@ -85,7 +78,7 @@ int main(int argc, char **argv) {
     rom.printHeader();
     NES::Mapper *mapper = rom.getMapper();
 
-    if (mapper == NULL) {
+    if (mapper == nullptr) {
         std::cout << "Unknown mapper.";
         return 1;
     }
@@ -143,9 +136,9 @@ int main(int argc, char **argv) {
             //Draw frame
             ppu.generateFrame = false;
             SDL_RenderSetScale(s, 2, 2);
-            SDL_UpdateTexture(texture, NULL, ppu.buffer, 256 * sizeof(Uint32));
+            SDL_UpdateTexture(texture, nullptr, ppu.buffer, 256 * sizeof(Uint32));
             SDL_RenderClear(s);
-            SDL_RenderCopy(s, texture, NULL, NULL);
+            SDL_RenderCopy(s, texture, nullptr, nullptr);
             SDL_RenderPresent(s);
         }
     }
