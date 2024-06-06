@@ -61,7 +61,7 @@ public:
     u8 readOAM(int);
     bool genNMI();
     bool generateFrame;
-    void printState();
+    void printState() const;
     uint32_t buffer[256 * 240] = {0};
 private:
     union {
@@ -162,17 +162,17 @@ private:
     //methods
     inline void copyHorizontalBits();
     inline void copyVerticalBits();
-    inline bool isRenderingDisabled();
+    inline bool isRenderingDisabled() const;
     inline void emitPixel();
     inline void fetchTiles();
     inline void xIncrement();
     inline void yIncrement();
     inline void reloadShiftersAndShift();
     inline void decrementSpriteCounters();
-    u16 getSpritePatternAddress(const Sprite &, bool);
+    u16 getSpritePatternAddress(const Sprite &, bool) const;
     void evalSprites();
-    bool inYRange(const Sprite &);
-    bool isUninit(const Sprite &);
+    bool inYRange(const Sprite &) const;
+    static bool isUninit(const Sprite &);
 };
 
 } // end namespace NES
