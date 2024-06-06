@@ -12,7 +12,7 @@ namespace NES {
             btnStateLocked >>= 1;
             return JOY1;
         } else {
-            //TODO: Implement JOY2
+
             return JOY2;
         }
     }
@@ -25,7 +25,7 @@ namespace NES {
 
             strobe = data & 0x1;
         } else {
-            //TODO: Implement JOY2
+
         }
     }
 
