@@ -174,6 +174,5 @@ private:
     bool inYRange(const Sprite &);
     bool isUninit(const Sprite &);
 };
-};
 
 } // end namespace NES

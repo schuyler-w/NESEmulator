@@ -96,7 +96,6 @@ int main(int argc, char **argv) {
     cpu.reset();
     SDL_Texture *texture = SDL_CreateTexture(s, SDL_PIXELFORMAT_ARGB8888, SDL_TEXTUREACCESS_STATIC, 256, 240);
 
-    //For perf
     int nmiCounter = 0;
     float duration = 0;
     auto t1 = std::chrono::high_resolution_clock::now();
@@ -152,7 +151,6 @@ int main(int argc, char **argv) {
     }
 
     SDL_Delay(3000);
-
     SDL_DestroyWindow(window);
 
     return 0;
