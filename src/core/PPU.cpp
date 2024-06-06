@@ -680,4 +680,4 @@ namespace NES {
                   << std::endl;
     }
 
-}  //namespace MedNES
+}  //namespace NES
