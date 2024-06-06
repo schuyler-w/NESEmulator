@@ -9,7 +9,7 @@ namespace NES {
 
 class BusInterface {
 public:
-    virtual ~BusInterface() {}
+    virtual ~BusInterface() = default;
     virtual u8 read(u16 address) = 0;
     virtual void write(u16 address, u8 data) = 0;
 };
